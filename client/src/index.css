@@ -3,6 +3,15 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/* 
+ * ONEY LABS DESIGN SYSTEM
+ * Philosophy: Raw Craft + Warm Dark
+ * Accent: Electric Lime-Yellow (#E8FF47)
+ * Secondary: Warm Orange (#FF6B35)
+ * Background: Warm Near-Black (#111111)
+ * Typography: Bebas Neue (display) / Manrope (headings) / Lora (body) / JetBrains Mono (data)
+ */
+
 @theme inline {
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
@@ -40,77 +49,50 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Oney Labs custom colors */
+  --color-lime: #E8FF47;
+  --color-orange: #FF6B35;
+  --color-cream: #F0EDE6;
+  --color-warm-gray: #888880;
+  --color-surface: #1A1A1A;
+  --color-surface-2: #222222;
 }
 
 :root {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-600);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --radius: 0.65rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.235 0.015 65);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.235 0.015 65);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.235 0.015 65);
-  --secondary: oklch(0.98 0.001 286.375);
-  --secondary-foreground: oklch(0.4 0.015 65);
-  --muted: oklch(0.967 0.001 286.375);
-  --muted-foreground: oklch(0.552 0.016 285.938);
-  --accent: oklch(0.967 0.001 286.375);
-  --accent-foreground: oklch(0.141 0.005 285.823);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(0.92 0.004 286.32);
-  --input: oklch(0.92 0.004 286.32);
-  --ring: oklch(0.623 0.214 259.815);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.235 0.015 65);
-  --sidebar-accent: oklch(0.967 0.001 286.375);
-  --sidebar-accent-foreground: oklch(0.141 0.005 285.823);
-  --sidebar-border: oklch(0.92 0.004 286.32);
-  --sidebar-ring: oklch(0.623 0.214 259.815);
-}
-
-.dark {
-  --primary: var(--color-blue-700);
-  --primary-foreground: var(--color-blue-50);
-  --sidebar-primary: var(--color-blue-500);
-  --sidebar-primary-foreground: var(--color-blue-50);
-  --background: oklch(0.141 0.005 285.823);
-  --foreground: oklch(0.85 0.005 65);
-  --card: oklch(0.21 0.006 285.885);
-  --card-foreground: oklch(0.85 0.005 65);
-  --popover: oklch(0.21 0.006 285.885);
-  --popover-foreground: oklch(0.85 0.005 65);
-  --secondary: oklch(0.24 0.006 286.033);
-  --secondary-foreground: oklch(0.7 0.005 65);
-  --muted: oklch(0.274 0.006 286.033);
-  --muted-foreground: oklch(0.705 0.015 286.067);
-  --accent: oklch(0.274 0.006 286.033);
-  --accent-foreground:  oklch(0.92 0.005 65);
-  --destructive: oklch(0.704 0.191 22.216);
-  --destructive-foreground: oklch(0.985 0 0);
-  --border: oklch(1 0 0 / 10%);
+  --radius: 0.5rem;
+  --background: oklch(0.1 0.005 60);
+  --foreground: oklch(0.94 0.01 80);
+  --card: oklch(0.14 0.005 60);
+  --card-foreground: oklch(0.94 0.01 80);
+  --popover: oklch(0.14 0.005 60);
+  --popover-foreground: oklch(0.94 0.01 80);
+  --primary: oklch(0.95 0.22 110);
+  --primary-foreground: oklch(0.1 0.005 60);
+  --secondary: oklch(0.18 0.005 60);
+  --secondary-foreground: oklch(0.85 0.01 80);
+  --muted: oklch(0.18 0.005 60);
+  --muted-foreground: oklch(0.6 0.01 80);
+  --accent: oklch(0.95 0.22 110);
+  --accent-foreground: oklch(0.1 0.005 60);
+  --destructive: oklch(0.65 0.22 25);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.488 0.243 264.376);
-  --chart-1: var(--color-blue-300);
-  --chart-2: var(--color-blue-500);
-  --chart-3: var(--color-blue-600);
-  --chart-4: var(--color-blue-700);
-  --chart-5: var(--color-blue-800);
-  --sidebar: oklch(0.21 0.006 285.885);
-  --sidebar-foreground: oklch(0.85 0.005 65);
-  --sidebar-accent: oklch(0.274 0.006 286.033);
-  --sidebar-accent-foreground:  oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.488 0.243 264.376);
+  --ring: oklch(0.95 0.22 110);
+  --chart-1: oklch(0.95 0.22 110);
+  --chart-2: oklch(0.75 0.18 50);
+  --chart-3: oklch(0.65 0.15 200);
+  --chart-4: oklch(0.55 0.12 280);
+  --chart-5: oklch(0.45 0.1 320);
+  --sidebar: oklch(0.12 0.005 60);
+  --sidebar-foreground: oklch(0.94 0.01 80);
+  --sidebar-primary: oklch(0.95 0.22 110);
+  --sidebar-primary-foreground: oklch(0.1 0.005 60);
+  --sidebar-accent: oklch(0.18 0.005 60);
+  --sidebar-accent-foreground: oklch(0.94 0.01 80);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.95 0.22 110);
 }
 
 @layer base {
@@ -119,6 +101,10 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Lora', Georgia, serif;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Manrope', system-ui, sans-serif;
   }
   button:not(:disabled),
   [role="button"]:not([aria-disabled="true"]),
@@ -134,24 +120,11 @@
 }
 
 @layer components {
-  /**
-   * Custom container utility that centers content and adds responsive padding.
-   *
-   * This overrides Tailwind's default container behavior to:
-   * - Auto-center content (mx-auto)
-   * - Add responsive horizontal padding
-   * - Set max-width for large screens
-   *
-   * Usage: <div className="container">...</div>
-   *
-   * For custom widths, use max-w-* utilities directly:
-   * <div className="max-w-6xl mx-auto px-4">...</div>
-   */
   .container {
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -162,16 +135,197 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
+  }
+
+  /* Oney Labs custom utilities */
+  .font-display {
+    font-family: 'Bebas Neue', Impact, sans-serif;
+    letter-spacing: 0.02em;
+  }
+
+  .font-heading {
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+
+  .font-body {
+    font-family: 'Lora', Georgia, serif;
+  }
+
+  .font-mono-data {
+    font-family: 'JetBrains Mono', 'Courier New', monospace;
+  }
+
+  .text-lime {
+    color: #E8FF47;
+  }
+
+  .text-orange-warm {
+    color: #FF6B35;
+  }
+
+  .bg-lime {
+    background-color: #E8FF47;
+  }
+
+  .bg-surface {
+    background-color: #1A1A1A;
+  }
+
+  .bg-surface-2 {
+    background-color: #222222;
+  }
+
+  .border-lime {
+    border-color: #E8FF47;
+  }
+
+  .highlight-lime {
+    background-color: #E8FF47;
+    color: #111111;
+    padding: 0 0.25rem;
+  }
+
+  .btn-lime {
+    background-color: #E8FF47;
+    color: #111111;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.875rem 2rem;
+    border-radius: 0.25rem;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  .btn-lime:hover {
+    background-color: #d4eb30;
+    transform: translateY(-1px);
+    box-shadow: 0 8px 24px rgba(232, 255, 71, 0.25);
+  }
+
+  .btn-outline-lime {
+    background-color: transparent;
+    color: #E8FF47;
+    font-family: 'Manrope', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.875rem 2rem;
+    border-radius: 0.25rem;
+    border: 2px solid #E8FF47;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+  }
+
+  .btn-outline-lime:hover {
+    background-color: #E8FF47;
+    color: #111111;
+  }
+
+  .section-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    color: #E8FF47;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .card-service {
+    background-color: #1A1A1A;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    transition: all 0.25s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-service::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background-color: transparent;
+    transition: background-color 0.25s ease;
+  }
+
+  .card-service:hover {
+    border-color: rgba(232, 255, 71, 0.2);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-service:hover::before {
+    background-color: #E8FF47;
+  }
+
+  .price-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: #E8FF47;
+  }
+
+  .divider-diagonal {
+    clip-path: polygon(0 0, 100% 5%, 100% 100%, 0 100%);
+    margin-top: -3rem;
+    padding-top: 5rem;
+  }
+
+  .divider-diagonal-reverse {
+    clip-path: polygon(0 5%, 100% 0, 100% 100%, 0 100%);
+    margin-top: -3rem;
+    padding-top: 5rem;
+  }
+
+  /* Animate on scroll */
+  .animate-slide-up {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+
+  .animate-slide-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* Gradient text */
+  .gradient-text-lime {
+    background: linear-gradient(135deg, #E8FF47 0%, #b8cc20 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Nav blur */
+  .nav-blur {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(17, 17, 17, 0.85);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 }
