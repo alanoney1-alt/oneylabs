@@ -13,7 +13,7 @@ const WORKSHOP_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409472708/A
 const whatYouLearn = [
   "How to find where AI can save YOUR business 20+ hours a week",
   "How to set up AI tools without a tech background",
-  "Real demos — not slides, not theory",
+  "Real demos   not slides, not theory",
   "One AI tool working for your business before you leave",
   "How to evaluate AI tools without getting scammed",
   "The difference between AI hype and AI that actually works",
@@ -33,7 +33,7 @@ export default function Workshops() {
             <span className="text-lime">ACTUALLY USE IT.</span>
           </h1>
           <p className="font-body text-white/60 text-lg max-w-2xl leading-relaxed">
-            Monthly workshops in South Orlando. 1-on-1 lessons. A weekly newsletter. You leave self-sufficient — not dependent on anyone.
+            Monthly workshops in South Orlando. 1-on-1 lessons. A weekly newsletter. You leave self-sufficient   not dependent on anyone.
           </p>
         </div>
       </section>
@@ -58,7 +58,7 @@ export default function Workshops() {
               <div className="grid grid-cols-3 gap-4 mb-8">
                 {[
                   { icon: Clock, label: "2 Hours", sub: "Hands-on" },
-                  { icon: Users, label: "15–20", sub: "People max" },
+                  { icon: Users, label: "15 20", sub: "People max" },
                   { icon: Calendar, label: "Monthly", sub: "South Orlando" },
                 ].map((item) => (
                   <div key={item.label} className="bg-[#1A1A1A] border border-white/8 rounded-lg p-4 text-center">
@@ -125,7 +125,7 @@ export default function Workshops() {
                 <span className="text-lime">YOUR AI.</span>
               </h2>
               <p className="font-body text-white/60 leading-relaxed mb-6">
-                I teach AI for your specific business. A plumber learns different things than a restaurant owner. You leave self-sufficient — not dependent on me or anyone else.
+                I teach AI for your specific business. A plumber learns different things than a restaurant owner. You leave self-sufficient   not dependent on me or anyone else.
               </p>
 
               <div className="flex flex-col gap-4 mb-8">
@@ -163,7 +163,7 @@ export default function Workshops() {
               <span className="text-lime">WEEKLY NEWSLETTER</span>
             </h2>
             <p className="font-body text-white/60 leading-relaxed mb-8">
-              Weekly deep dives on AI for local business. Real tools. Real results. Written by someone who actually builds with AI — not someone who writes about it.
+              Weekly deep dives on AI for local business. Real tools. Real results. Written by someone who actually builds with AI   not someone who writes about it.
             </p>
             <a href="https://substack.com" target="_blank" rel="noopener noreferrer">
               <button className="btn-lime">
@@ -181,7 +181,7 @@ export default function Workshops() {
             NEXT WORKSHOP IS COMING UP.
           </h2>
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
-            Spots fill up fast. 15–20 people max. Register now or book a 1-on-1 lesson.
+            Spots fill up fast. 15 20 people max. Register now or book a 1-on-1 lesson.
           </p>
           <Link href="/contact">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">

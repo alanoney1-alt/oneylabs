@@ -1,7 +1,7 @@
 /*
  * ONEY LABS BUILD WITH ME PAGE
  * Design: Raw Craft + Warm Dark
- * For entrepreneurs with ideas — idea-to-product builds
+ * For entrepreneurs with ideas   idea-to-product builds
  */
 import { Link } from "wouter";
 import { ArrowRight, Rocket, CheckCircle2, ExternalLink } from "lucide-react";
@@ -24,18 +24,18 @@ const whatWeBuild = [
 const process = [
   {
     step: "01",
-    title: "Discovery Session — $250",
+    title: "Discovery Session   $250",
     desc: "90 minutes. We map out your idea, validate the concept, define the MVP scope, and create a clear build plan. Applied to your project cost if you sign.",
   },
   {
     step: "02",
-    title: "MVP Sprint — $3,500–$10,000",
-    desc: "2–4 week delivery. I build your MVP using AI tools, modern frameworks, and proven patterns. You get a working product, not a prototype.",
+    title: "MVP Sprint   $3,500 $10,000",
+    desc: "2 4 week delivery. I build your MVP using AI tools, modern frameworks, and proven patterns. You get a working product, not a prototype.",
   },
   {
     step: "03",
     title: "Launch & Iterate",
-    desc: "Ongoing support at $500–$1,500/month. Or revenue share: $0 upfront, 15% of revenue for ideas I believe in.",
+    desc: "Ongoing support at $500 $1,500/month. Or revenue share: $0 upfront, 15% of revenue for ideas I believe in.",
   },
 ];
 
@@ -57,12 +57,12 @@ export default function BuildWithMe() {
             IN WEEKS.
           </h1>
           <p className="font-body text-white/60 text-lg max-w-2xl leading-relaxed mb-10">
-            No tech team needed. No $100K budget. I use AI to prototype, build, and launch your idea in 2–4 weeks. Real software. Real timelines.
+            No tech team needed. No $100K budget. I use AI to prototype, build, and launch your idea in 2 4 weeks. Real software. Real timelines.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <Link href="/contact">
               <button className="btn-lime text-base px-8 py-4">
-                Book Discovery Session — $250 <ArrowRight size={18} />
+                Book Discovery Session   $250 <ArrowRight size={18} />
               </button>
             </Link>
             <a href="https://uptendapp.com" target="_blank" rel="noopener noreferrer">
@@ -100,7 +100,7 @@ export default function BuildWithMe() {
             <div className="relative rounded-lg overflow-hidden border border-white/10">
               <img
                 src={DASHBOARD_IMG}
-                alt="UpTend platform — built by one person with AI"
+                alt="UpTend platform   built by one person with AI"
                 className="w-full object-cover"
               />
             </div>
@@ -185,7 +185,7 @@ export default function BuildWithMe() {
           </p>
           <Link href="/contact">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
-              Book Discovery Session — $250 <ArrowRight size={18} />
+              Book Discovery Session   $250 <ArrowRight size={18} />
             </button>
           </Link>
         </div>

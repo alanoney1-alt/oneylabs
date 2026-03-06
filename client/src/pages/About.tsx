@@ -16,7 +16,7 @@ const advantages = [
   { title: "Local and in-person", desc: "Sit across from you at a coffee shop and demo it live." },
   { title: "Accessible pricing", desc: "$750/mo entry vs $3K+ everywhere else." },
   { title: "Full stack", desc: "Apps, automation, SEO, content, AI agents, social media, strategy. One person, all of it." },
-  { title: "Speed", desc: "2–4 weeks, not 3–6 months. AI makes this possible." },
+  { title: "Speed", desc: "2 4 weeks, not 3 6 months. AI makes this possible." },
   { title: "Revenue share", desc: "Nobody else offers this. Attracts the best ideas." },
   { title: "Low overhead", desc: "No team salaries. AI does the heavy lifting. ~$50/month cost per client = 95%+ margins." },
 ];
@@ -66,7 +66,7 @@ export default function About() {
             <div className="relative">
               <img
                 src={ALAN_IMG}
-                alt="Alan Oney — AI builder and consultant in Lake Nona, Orlando"
+                alt="Alan Oney   AI builder and consultant in Lake Nona, Orlando"
                 className="w-full rounded-lg object-cover max-h-[600px]"
               />
               <div className="absolute -bottom-4 -right-4 bg-[#1A1A1A] border border-lime/30 rounded-lg p-4">
@@ -109,7 +109,7 @@ export default function About() {
             <div className="relative rounded-lg overflow-hidden border border-white/10">
               <img
                 src={DASHBOARD_IMG}
-                alt="UpTend platform dashboard — 198 AI tools built by one person"
+                alt="UpTend platform dashboard   198 AI tools built by one person"
                 className="w-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 to-transparent" />
@@ -164,9 +164,9 @@ export default function About() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {[
-              { phase: "Phase 1", months: "Month 1–3", areas: "Lake Nona · St. Cloud · Narcoossee · Meadow Woods" },
-              { phase: "Phase 2", months: "Month 4–6", areas: "Hunter's Creek · Kissimmee · Celebration · Poinciana" },
-              { phase: "Phase 3", months: "Month 7–12", areas: "Dr. Phillips · Windermere · Winter Garden · South Downtown" },
+              { phase: "Phase 1", months: "Month 1 3", areas: "Lake Nona · St. Cloud · Narcoossee · Meadow Woods" },
+              { phase: "Phase 2", months: "Month 4 6", areas: "Hunter's Creek · Kissimmee · Celebration · Poinciana" },
+              { phase: "Phase 3", months: "Month 7 12", areas: "Dr. Phillips · Windermere · Winter Garden · South Downtown" },
               { phase: "Phase 4", months: "Year 2", areas: "All Orlando Metro" },
             ].map((phase) => (
               <div key={phase.phase} className="card-service">
@@ -186,7 +186,7 @@ export default function About() {
             LET'S MEET FOR COFFEE.
           </h2>
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
-            I do office hours every Thursday — free 15-minute AI chats. Or book a full 30-minute audit.
+            I do office hours every Thursday   free 15-minute AI chats. Or book a full 30-minute audit.
           </p>
           <Link href="/contact">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">

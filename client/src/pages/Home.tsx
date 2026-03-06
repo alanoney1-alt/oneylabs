@@ -59,17 +59,17 @@ const pillars = [
     icon: GraduationCap,
     title: "AI Education",
     subtitle: "Learn it. Use it. Own it.",
-    description: "Monthly workshops, 1-on-1 lessons, and a weekly newsletter. You leave self-sufficient — not dependent on anyone.",
+    description: "Monthly workshops, 1-on-1 lessons, and a weekly newsletter. You leave self-sufficient   not dependent on anyone.",
     href: "/workshops",
     from: "$75/workshop",
   },
 ];
 
 const stats = [
-  { value: "198", unit: "AI Tools", label: "Built in UpTend — one platform, one person" },
-  { value: "2–4", unit: "Weeks", label: "Average MVP delivery time (not 3–6 months)" },
+  { value: "198", unit: "AI Tools", label: "Built in UpTend   one platform, one person" },
+  { value: "2 4", unit: "Weeks", label: "Average MVP delivery time (not 3 6 months)" },
   { value: "95%+", unit: "Margin", label: "~$50/month cost per client. AI does the heavy lifting." },
-  { value: "50–70%", unit: "Cheaper", label: "Than every other AI consulting firm in Orlando" },
+  { value: "50 70%", unit: "Cheaper", label: "Than every other AI consulting firm in Orlando" },
 ];
 
 const process = [
@@ -127,7 +127,7 @@ export default function Home() {
             </h1>
 
             <p className="font-body text-lg text-white/70 max-w-xl leading-relaxed mb-4">
-              Built by a builder, not a consultant. I'll show you exactly where AI saves your business 20 hours a week — then I'll build it.
+              Built by a builder, not a consultant. I'll show you exactly where AI saves your business 20 hours a week   then I'll build it.
             </p>
 
             <p className="font-heading font-600 text-white/40 text-sm mb-10">
@@ -149,7 +149,7 @@ export default function Home() {
             </div>
 
             <div className="flex flex-wrap gap-6 mt-10">
-              {["No contracts required", "Pricing on the page", "2–4 week delivery"].map((item) => (
+              {["No contracts required", "Pricing on the page", "2 4 week delivery"].map((item) => (
                 <div key={item} className="flex items-center gap-2">
                   <CheckCircle2 size={15} className="text-lime" />
                   <span className="font-heading text-sm text-white/60">{item}</span>
@@ -245,7 +245,7 @@ export default function Home() {
                 ONE PERSON.
               </h2>
               <p className="font-body text-white/60 leading-relaxed mb-6">
-                UpTend is a full home services platform — AI voice agents, automated booking, partner management, real-time analytics, and SEO infrastructure. Built entirely by me, using AI. That's not a case study. That's the product demo.
+                UpTend is a full home services platform   AI voice agents, automated booking, partner management, real-time analytics, and SEO infrastructure. Built entirely by me, using AI. That's not a case study. That's the product demo.
               </p>
               <p className="font-body text-white/60 leading-relaxed mb-8">
                 Imagine what I can build for your business.
@@ -476,7 +476,7 @@ export default function Home() {
                 {[
                   { icon: DollarSign, title: "Pricing on the page", desc: "Everyone hides it. We show it. Instant trust." },
                   { icon: Building2, title: "Proof of building", desc: "UpTend exists. 198 AI tools. One person. That's the pitch." },
-                  { icon: Clock, title: "2–4 week delivery", desc: "Not 3–6 months. AI makes this possible." },
+                  { icon: Clock, title: "2 4 week delivery", desc: "Not 3 6 months. AI makes this possible." },
                   { icon: TrendingUp, title: "Revenue share option", desc: "$0 upfront for the best ideas. Zero competitors offer this." },
                 ].map((item) => (
                   <div key={item.title} className="flex gap-4">

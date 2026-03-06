@@ -89,7 +89,7 @@ export default function Services() {
             </div>
             <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-4">
               {[
-                { title: "Idea-to-Product", from: "From $3,500", desc: "You have the idea. I build it. 2–4 week MVP delivery." },
+                { title: "Idea-to-Product", from: "From $3,500", desc: "You have the idea. I build it. 2 4 week MVP delivery." },
                 { title: "AI Operations", from: "From $750", desc: "I audit your business and automate where you bleed time." },
                 { title: "AI for Entrepreneurs", from: "From $250", desc: "1-on-1 strategy, build-with-me sprints, ongoing advisory." },
               ].map((item) => (
@@ -118,7 +118,7 @@ export default function Services() {
                 <span className="text-lime">OWN IT.</span>
               </h2>
               <p className="font-body text-white/60 leading-relaxed mb-6">
-                Monthly workshops in South Orlando. 1-on-1 lessons. A weekly newsletter. You leave self-sufficient — not dependent on anyone.
+                Monthly workshops in South Orlando. 1-on-1 lessons. A weekly newsletter. You leave self-sufficient   not dependent on anyone.
               </p>
               <Link href="/workshops">
                 <button className="btn-lime">
@@ -130,7 +130,7 @@ export default function Services() {
               {[
                 { title: "Monthly Workshop", price: "$75/person", desc: "2-hour hands-on. Live demos. You leave with one AI tool working." },
                 { title: "1-on-1 AI Lessons", price: "$200/hr", desc: "Teach AI for your specific business. Leave self-sufficient." },
-                { title: "Substack Newsletter", price: "Free", desc: "'AI Search Orlando' — weekly deep dives on AI for local business." },
+                { title: "Substack Newsletter", price: "Free", desc: "'AI Search Orlando'   weekly deep dives on AI for local business." },
               ].map((item) => (
                 <div key={item.title} className="card-service flex items-start justify-between gap-4">
                   <div>

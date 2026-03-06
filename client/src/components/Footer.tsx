@@ -14,9 +14,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-lime rounded-sm flex items-center justify-center">
-                <span className="font-display text-black text-lg leading-none">O</span>
-              </div>
+              <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663409472708/AwZd3Nde3Mv8PBZXHdvufN/oney-labs-logo-XhAEzjaiUbxxcsHkcXP4AR.webp" alt="Oney Labs" className="w-8 h-8" />
               <span className="font-heading font-800 text-white text-lg tracking-tight">
                 Oney<span className="text-lime">Labs</span>
               </span>

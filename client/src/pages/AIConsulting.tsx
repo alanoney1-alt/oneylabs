@@ -1,7 +1,7 @@
 /*
  * ONEY LABS AI CONSULTING PAGE
  * Design: Raw Craft + Warm Dark
- * AI Operations Consulting — audit, implement, manage
+ * AI Operations Consulting   audit, implement, manage
  */
 import { Link } from "wouter";
 import { ArrowRight, Zap, Clock, DollarSign, Users } from "lucide-react";
@@ -11,7 +11,7 @@ import Footer from "@/components/Footer";
 const targets = [
   "Medical offices", "Law firms", "Restaurants", "Real estate agents",
   "Property managers", "HVAC companies", "Med spas", "Retail shops",
-  "Any business with 5–50 employees still doing things by hand",
+  "Any business with 5 50 employees still doing things by hand",
 ];
 
 export default function AIConsulting() {
@@ -32,7 +32,7 @@ export default function AIConsulting() {
             IT BY HAND.
           </h1>
           <p className="font-body text-white/60 text-lg max-w-2xl leading-relaxed">
-            Walk into your business. Find where you bleed time. Automate it. Or bring me your idea — I'll build it in weeks, not months.
+            Walk into your business. Find where you bleed time. Automate it. Or bring me your idea   I'll build it in weeks, not months.
           </p>
         </div>
       </section>
@@ -70,8 +70,8 @@ export default function AIConsulting() {
             <div className="flex flex-col gap-3">
               {[
                 { label: "Discovery Session", price: "$250", note: "90 min · Applied to project if you sign" },
-                { label: "MVP Sprint", price: "$3,500–$10,000", note: "2–4 week delivery" },
-                { label: "Ongoing Support", price: "$500–$1,500/mo", note: "After launch" },
+                { label: "MVP Sprint", price: "$3,500 $10,000", note: "2 4 week delivery" },
+                { label: "Ongoing Support", price: "$500 $1,500/mo", note: "After launch" },
                 { label: "Revenue Share", price: "$0 upfront", note: "15% of revenue for ideas Alan believes in" },
               ].map((item) => (
                 <div key={item.label} className="card-service flex items-center justify-between gap-4">
@@ -94,13 +94,13 @@ export default function AIConsulting() {
                 <span className="text-lime">CONSULTING</span>
               </h3>
               <p className="font-body text-white/60 leading-relaxed mb-5">
-                I walk into your business, audit where you bleed time, and automate it. Medical offices, law firms, restaurants, property managers — any business with 5–50 employees still doing things by hand.
+                I walk into your business, audit where you bleed time, and automate it. Medical offices, law firms, restaurants, property managers   any business with 5 50 employees still doing things by hand.
               </p>
               <div className="flex flex-col gap-3">
                 {[
                   { label: "AI Audit", price: "$750", note: "2-hour deep dive + written report" },
-                  { label: "Implementation Sprint", price: "$3,000–$7,500", note: "Build what the audit recommends" },
-                  { label: "Managed AI Operations", price: "$1,500–$3,500/mo", note: "Ongoing automation management" },
+                  { label: "Implementation Sprint", price: "$3,000 $7,500", note: "Build what the audit recommends" },
+                  { label: "Managed AI Operations", price: "$1,500 $3,500/mo", note: "Ongoing automation management" },
                 ].map((item) => (
                   <div key={item.label} className="card-service flex items-center justify-between gap-4">
                     <div>
@@ -168,8 +168,8 @@ export default function AIConsulting() {
         <div className="container">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
-              { icon: Clock, title: "2–4 Week Delivery", desc: "Not 3–6 months. AI makes this possible. I've done it with UpTend — 198 tools, one person." },
-              { icon: DollarSign, title: "50–70% Cheaper", desc: "Than every other AI consulting firm in Orlando. No team overhead. AI does the heavy lifting." },
+              { icon: Clock, title: "2 4 Week Delivery", desc: "Not 3 6 months. AI makes this possible. I've done it with UpTend   198 tools, one person." },
+              { icon: DollarSign, title: "50 70% Cheaper", desc: "Than every other AI consulting firm in Orlando. No team overhead. AI does the heavy lifting." },
               { icon: Users, title: "In-Person Available", desc: "Based in Lake Nona. I'll sit across from you, demo it live, and build it with you." },
             ].map((item) => (
               <div key={item.title} className="card-service text-center">
@@ -196,7 +196,7 @@ export default function AIConsulting() {
           </p>
           <Link href="/contact">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
-              Book AI Audit — $750 <ArrowRight size={18} />
+              Book AI Audit   $750 <ArrowRight size={18} />
             </button>
           </Link>
         </div>

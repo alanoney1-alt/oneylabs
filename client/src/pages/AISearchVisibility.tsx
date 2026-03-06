@@ -1,7 +1,7 @@
 /*
  * ONEY LABS AI SEARCH VISIBILITY PAGE
  * Design: Raw Craft + Warm Dark
- * Deep dive on Pillar 1 — AI Search Visibility
+ * Deep dive on Pillar 1   AI Search Visibility
  */
 import { Link } from "wouter";
 import { ArrowRight, CheckCircle2, Search, TrendingUp, Globe, Star } from "lucide-react";
@@ -73,7 +73,7 @@ const faqs = [
   },
   {
     q: "How long does it take to see results?",
-    a: "Directory listings and GBP optimization show results in 2–4 weeks. AI search visibility typically builds over 2–3 months as AI systems index and cite your content.",
+    a: "Directory listings and GBP optimization show results in 2 4 weeks. AI search visibility typically builds over 2 3 months as AI systems index and cite your content.",
   },
   {
     q: "Do I need to sign a long-term contract?",
@@ -81,7 +81,7 @@ const faqs = [
   },
   {
     q: "What makes you different from other SEO agencies?",
-    a: "Nobody in South Orlando specifically sells AI search optimization. We're the first. And we show pricing on the page — no hidden fees, no surprise invoices.",
+    a: "Nobody in South Orlando specifically sells AI search optimization. We're the first. And we show pricing on the page   no hidden fees, no surprise invoices.",
   },
 ];
 
@@ -109,7 +109,7 @@ export default function AISearchVisibility() {
             WHEN SOMEONE ASKS<br />
             CHATGPT FOR THE BEST<br />
             <span className="text-lime">[YOUR SERVICE]</span><br />
-            IN ORLANDO —<br />
+            IN ORLANDO  <br />
             DO YOU SHOW UP?
           </h1>
           <p className="font-body text-white/70 text-lg max-w-xl leading-relaxed mb-10">
@@ -134,7 +134,7 @@ export default function AISearchVisibility() {
                 <span className="text-lime">GOOGLE.</span>
               </h2>
               <p className="font-body text-white/60 leading-relaxed mb-5">
-                50% of searches now start with an AI tool. ChatGPT, Perplexity, Google AI Overview, Gemini — they're all recommending local businesses. The businesses that show up are the ones that get the call.
+                50% of searches now start with an AI tool. ChatGPT, Perplexity, Google AI Overview, Gemini   they're all recommending local businesses. The businesses that show up are the ones that get the call.
               </p>
               <p className="font-body text-white/60 leading-relaxed">
                 Most businesses in South Orlando aren't optimized for this yet. That's your window. We help you get in front of it before your competitors figure it out.

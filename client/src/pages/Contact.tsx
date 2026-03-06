@@ -64,7 +64,7 @@ export default function Contact() {
                   <span className="font-heading font-600 text-white text-sm">Office Hours</span>
                 </div>
                 <p className="font-body text-white/50 text-sm leading-relaxed">
-                  Every Thursday — free 15-minute AI chats at local coffee shops in South Orlando. No appointment needed.
+                  Every Thursday   free 15-minute AI chats at local coffee shops in South Orlando. No appointment needed.
                 </p>
               </div>
 

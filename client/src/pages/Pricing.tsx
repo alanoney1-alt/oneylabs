@@ -62,15 +62,15 @@ const searchPlans = [
 
 const buildPricing = [
   { label: "Discovery Session", price: "$250", note: "90 min · Applied to project if you sign" },
-  { label: "MVP Sprint", price: "$3,500–$10,000", note: "2–4 week delivery" },
-  { label: "Ongoing Support", price: "$500–$1,500/mo", note: "After launch" },
+  { label: "MVP Sprint", price: "$3,500 $10,000", note: "2 4 week delivery" },
+  { label: "Ongoing Support", price: "$500 $1,500/mo", note: "After launch" },
   { label: "Revenue Share", price: "$0 upfront", note: "15% of revenue for ideas Alan believes in" },
 ];
 
 const opsPricing = [
   { label: "AI Audit", price: "$750", note: "2-hour deep dive + written report" },
-  { label: "Implementation Sprint", price: "$3,000–$7,500", note: "Build what the audit recommends" },
-  { label: "Managed AI Operations", price: "$1,500–$3,500/mo", note: "Ongoing automation management" },
+  { label: "Implementation Sprint", price: "$3,000 $7,500", note: "Build what the audit recommends" },
+  { label: "Managed AI Operations", price: "$1,500 $3,500/mo", note: "Ongoing automation management" },
 ];
 
 const educationPricing = [
