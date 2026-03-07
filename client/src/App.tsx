@@ -16,6 +16,10 @@ import BuildWithMe from "./pages/BuildWithMe";
 import WhatIsAISearchVisibility from "./pages/WhatIsAISearchVisibility";
 import AISearchAuditOrlando from "./pages/AISearchAuditOrlando";
 import HowToShowUpInChatGPT from "./pages/HowToShowUpInChatGPT";
+import Blog from "./pages/Blog";
+import BlogPost1 from "./pages/BlogPost1";
+import BlogPost2 from "./pages/BlogPost2";
+import BlogPost3 from "./pages/BlogPost3";
 
 function Router() {
   return (
@@ -32,6 +36,10 @@ function Router() {
       <Route path="/what-is-ai-search-visibility" component={WhatIsAISearchVisibility} />
       <Route path="/ai-search-audit-orlando" component={AISearchAuditOrlando} />
       <Route path="/how-to-show-up-in-chatgpt" component={HowToShowUpInChatGPT} />
+      <Route path="/blog" component={Blog} />
+      <Route path="/blog/best-hvac-company-orlando-chatgpt" component={BlogPost1} />
+      <Route path="/blog/how-to-show-up-in-perplexity" component={BlogPost2} />
+      <Route path="/blog/chatgpt-vs-google-local-business" component={BlogPost3} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
