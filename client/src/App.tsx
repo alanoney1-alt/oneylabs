@@ -13,6 +13,9 @@ import Contact from "./pages/Contact";
 import AISearchVisibility from "./pages/AISearchVisibility";
 import AIConsulting from "./pages/AIConsulting";
 import BuildWithMe from "./pages/BuildWithMe";
+import WhatIsAISearchVisibility from "./pages/WhatIsAISearchVisibility";
+import AISearchAuditOrlando from "./pages/AISearchAuditOrlando";
+import HowToShowUpInChatGPT from "./pages/HowToShowUpInChatGPT";
 
 function Router() {
   return (
@@ -26,6 +29,9 @@ function Router() {
       <Route path="/ai-search-visibility" component={AISearchVisibility} />
       <Route path="/ai-consulting" component={AIConsulting} />
       <Route path="/build-with-me" component={BuildWithMe} />
+      <Route path="/what-is-ai-search-visibility" component={WhatIsAISearchVisibility} />
+      <Route path="/ai-search-audit-orlando" component={AISearchAuditOrlando} />
+      <Route path="/how-to-show-up-in-chatgpt" component={HowToShowUpInChatGPT} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
