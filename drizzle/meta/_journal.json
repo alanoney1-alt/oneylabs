@@ -8,6 +8,13 @@
       "when": 1772843579057,
       "tag": "0000_redundant_otto_octavius",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1772844102544,
+      "tag": "0001_fresh_anthem",
+      "breakpoints": true
     }
   ]
 }

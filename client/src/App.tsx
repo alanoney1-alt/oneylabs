@@ -21,8 +21,14 @@ import BlogPost1 from "./pages/BlogPost1";
 import BlogPost2 from "./pages/BlogPost2";
 import BlogPost3 from "./pages/BlogPost3";
 import VisibilityChecker from "./pages/VisibilityChecker";
+import LocationPage from "./pages/LocationPage";
+import BlogCMS from "./pages/BlogCMS";
+import BlogPostDynamic from "./pages/BlogPostDynamic";
+import BookingPage from "./pages/BookingPage";
+import AdminDashboard from "./pages/AdminDashboard";
+import ChatWidget from "./components/ChatWidget";
+
 function Router() {
-  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -41,7 +47,12 @@ function Router() {
       <Route path="/blog/best-hvac-company-orlando-chatgpt" component={BlogPost1} />
       <Route path="/blog/how-to-show-up-in-perplexity" component={BlogPost2} />
       <Route path="/blog/chatgpt-vs-google-local-business" component={BlogPost3} />
+      <Route path="/blog/posts" component={BlogCMS} />
+      <Route path="/blog/posts/:slug" component={BlogPostDynamic} />
       <Route path="/visibility-checker" component={VisibilityChecker} />
+      <Route path="/book" component={BookingPage} />
+      <Route path="/ai-consulting/:slug" component={LocationPage} />
+      <Route path="/admin" component={AdminDashboard} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>
@@ -55,6 +66,7 @@ function App() {
         <TooltipProvider>
           <Toaster />
           <Router />
+          <ChatWidget />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>
