@@ -358,7 +358,7 @@ export default function BlogPost3() {
           <p className="font-body text-lg mb-8 text-black/80">
             Book a free AI search audit. I'll show you exactly where you rank in both platforms and create a unified optimization strategy.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 px-8 py-3 rounded hover:bg-black/90 transition">
               Book Free Audit
             </button>

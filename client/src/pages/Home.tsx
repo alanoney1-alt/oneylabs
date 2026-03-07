@@ -135,7 +135,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
+              <Link href="/book">
                 <button className="btn-lime text-base px-8 py-4">
                   Book Free AI Audit
                   <ArrowRight size={18} />
@@ -333,7 +333,7 @@ export default function Home() {
           </div>
 
           <div className="mt-14 text-center animate-slide-up">
-            <Link href="/contact">
+            <Link href="/book">
               <button className="btn-lime text-base px-10 py-4">
                 Start with a Free Audit
                 <ArrowRight size={18} />
@@ -423,7 +423,7 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact">
+                <Link href="/book">
                   <button className={`w-full py-3 rounded font-heading font-700 text-sm uppercase tracking-wide transition-all ${
                     plan.highlight
                       ? "bg-black text-lime hover:bg-black/80"
@@ -506,7 +506,7 @@ export default function Home() {
             Book a free 30-minute AI audit. I'll look at your business and tell you exactly what AI can do for you. No pitch. Just answers.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up">
-            <Link href="/contact">
+            <Link href="/book">
               <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2">
                 Book Free AI Audit
                 <ArrowRight size={18} />

@@ -75,7 +75,7 @@ export default function Navbar() {
             >
               (850) 319-9550
             </a>
-            <Link href="/contact">
+            <Link href="/book">
               <button className="btn-lime text-sm py-2 px-5">
                 Free AI Audit
               </button>
@@ -115,7 +115,7 @@ export default function Navbar() {
               >
                 (850) 319-9550
               </a>
-              <Link href="/contact">
+              <Link href="/book">
                 <button className="btn-lime w-full justify-center">
                   Book Free AI Audit
                 </button>

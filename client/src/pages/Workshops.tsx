@@ -78,7 +78,7 @@ export default function Workshops() {
                 <p className="font-body text-white/50 text-sm">Free with consultation booking</p>
               </div>
 
-              <Link href="/contact">
+              <Link href="/book">
                 <button className="btn-lime">
                   Register for Next Workshop <ArrowRight size={16} />
                 </button>
@@ -143,7 +143,7 @@ export default function Workshops() {
                 ))}
               </div>
 
-              <Link href="/contact">
+              <Link href="/book">
                 <button className="btn-outline-lime">
                   Book a Lesson <ArrowRight size={16} />
                 </button>
@@ -183,7 +183,7 @@ export default function Workshops() {
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
             Spots fill up fast. 15 20 people max. Register now or book a 1-on-1 lesson.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
               Register Now <ArrowRight size={18} />
             </button>

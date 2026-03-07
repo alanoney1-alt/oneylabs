@@ -51,7 +51,7 @@ export default function About() {
                 <span className="font-heading font-500 text-white/60">Lake Nona, Orlando, FL</span>
               </div>
               <div className="flex gap-4">
-                <Link href="/contact">
+                <Link href="/book">
                   <button className="btn-lime">
                     Work With Me <ArrowRight size={16} />
                   </button>
@@ -188,7 +188,7 @@ export default function About() {
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
             I do office hours every Thursday   free 15-minute AI chats. Or book a full 30-minute audit.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
               Book Free AI Audit <ArrowRight size={18} />
             </button>

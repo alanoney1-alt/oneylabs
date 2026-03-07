@@ -91,7 +91,7 @@ export default function Footer() {
             <p className="font-body text-sm text-white/50 mb-5 leading-relaxed">
               Book a free 30-minute AI audit. No pitch. Just a real look at where AI can save your business time and money.
             </p>
-            <Link href="/contact">
+            <Link href="/book">
               <button className="btn-lime text-sm w-full justify-center">
                 Book Free AI Audit
               </button>

@@ -107,7 +107,7 @@ export default function BuildWithMe() {
             No tech team needed. No $100K budget. I use AI to prototype, build, and launch your idea in 2 4 weeks. Real software. Real timelines.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <Link href="/contact">
+            <Link href="/book">
               <button className="btn-lime text-base px-8 py-4">
                 Book Discovery Session   $250 <ArrowRight size={18} />
               </button>
@@ -210,7 +210,7 @@ export default function BuildWithMe() {
               <p className="font-body text-white/60 leading-relaxed mb-8">
                 This isn't for everyone. It's for the ideas that are genuinely good. Book a discovery session and let's talk.
               </p>
-              <Link href="/contact">
+              <Link href="/book">
                 <button className="btn-lime">
                   Pitch Your Idea <ArrowRight size={16} />
                 </button>
@@ -230,7 +230,7 @@ export default function BuildWithMe() {
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
             Book a discovery session. 90 minutes. $250 applied to your project. We'll map out exactly what it takes to build it.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
               Book Discovery Session   $250 <ArrowRight size={18} />
             </button>

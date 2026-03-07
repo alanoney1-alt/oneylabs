@@ -229,7 +229,7 @@ export default function AIVisibilityChecker() {
                 <li className="flex items-start gap-2 text-white/70 text-sm"><span className="text-lime font-bold">1.</span><span>Maintain current optimization efforts and monitor visibility monthly</span></li>
               )}
             </ul>
-            <Link href="/contact">
+            <Link href="/book">
               <Button className="w-full bg-lime text-black hover:bg-lime/90 font-heading font-700 text-sm uppercase tracking-wide">
                 Book Free AI Audit <ArrowRight size={16} className="ml-2" />
               </Button>

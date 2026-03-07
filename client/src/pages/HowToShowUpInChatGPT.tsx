@@ -372,7 +372,7 @@ export default function HowToShowUpInChatGPT() {
           <p className="font-body text-lg mb-8 text-black/80">
             Book a free AI search audit. I'll show you exactly where you rank in ChatGPT and create a custom plan to get you visible.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 px-8 py-3 rounded hover:bg-black/90 transition">
               Book Free Audit
             </button>

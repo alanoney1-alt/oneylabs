@@ -24,3 +24,6 @@
 - [x] Auto-generated location pages for South Orlando neighborhoods
 - [x] Blog CMS with admin panel (create/edit/publish posts)
 - [x] Google review aggregator widget
+
+## UX Improvements
+- [x] Change all 'Book Free AI Audit' buttons to link to /book instead of /contact

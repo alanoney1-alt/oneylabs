@@ -25,7 +25,7 @@ export default function WhatIsAISearchVisibility() {
           <p className="font-body text-lg text-white/70 leading-relaxed mb-8">
             AI search visibility is how visible your business is when people ask AI assistants like ChatGPT, Perplexity, and Claude for recommendations in your industry. It's the new frontier of local search.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="btn-lime">Book Free AI Audit</button>
           </Link>
         </div>
@@ -157,7 +157,7 @@ export default function WhatIsAISearchVisibility() {
           <p className="font-body text-lg mb-8 text-black/80">
             Book a free 30-minute audit. I'll show you exactly where you rank in ChatGPT and what it takes to show up.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 px-8 py-3 rounded hover:bg-black/90 transition">
               Book Free Audit
             </button>

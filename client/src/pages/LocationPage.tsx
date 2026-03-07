@@ -119,7 +119,7 @@ export default function LocationPage() {
               {location.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact">
+              <Link href="/book">
                 <button className="btn-lime text-base px-8 py-4">
                   Book Free AI Audit <ArrowRight size={18} />
                 </button>
@@ -191,7 +191,7 @@ export default function LocationPage() {
           <p className="font-body text-black/70 text-lg max-w-xl mx-auto mb-8">
             Book a free 30-minute AI audit. I'll show you exactly where your {location.name} business stands in ChatGPT, Perplexity, and Claude.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
               Book Free AI Audit <ArrowRight size={18} />
             </button>

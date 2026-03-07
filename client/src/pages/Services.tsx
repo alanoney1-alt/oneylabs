@@ -154,7 +154,7 @@ export default function Services() {
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
             Book a free 30-minute AI audit. I'll tell you exactly which service fits your business.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
               Book Free AI Audit <ArrowRight size={18} />
             </button>

@@ -92,7 +92,7 @@ export default function BlogPostDynamic() {
             <div className="mt-16 bg-lime/10 border border-lime/30 rounded-lg p-8 text-center">
               <h3 className="font-heading font-800 text-white text-xl mb-2">Want to discuss this topic?</h3>
               <p className="text-white/60 text-sm mb-6">Book a free 30-minute AI audit and let's talk about how this applies to your business.</p>
-              <Link href="/contact">
+              <Link href="/book">
                 <button className="btn-lime px-8 py-3">Book Free AI Audit</button>
               </Link>
             </div>

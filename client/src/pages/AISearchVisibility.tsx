@@ -140,7 +140,7 @@ export default function AISearchVisibility() {
           <p className="font-body text-white/70 text-lg max-w-xl leading-relaxed mb-10">
             Nobody in South Orlando sells this. We're the first. That's a first-mover advantage you can own right now.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="btn-lime text-base px-8 py-4">
               Get Visible Now <ArrowRight size={18} />
             </button>
@@ -227,7 +227,7 @@ export default function AISearchVisibility() {
                     </li>
                   ))}
                 </ul>
-                <Link href="/contact">
+                <Link href="/book">
                   <button className={`w-full py-3 rounded font-heading font-700 text-sm uppercase tracking-wide transition-all ${
                     plan.highlight
                       ? "bg-black text-lime hover:bg-black/80"
@@ -272,7 +272,7 @@ export default function AISearchVisibility() {
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
             Book a free AI visibility audit. I'll show you exactly where you stand and what it takes to show up.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
               Book Free Visibility Audit <ArrowRight size={18} />
             </button>

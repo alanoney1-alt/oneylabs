@@ -240,7 +240,7 @@ export default function AIConsulting() {
           <p className="font-body text-black/70 mb-8 max-w-lg mx-auto">
             $750 one-time. 2-hour deep dive + written report. I'll show you exactly where AI can save your business time and money.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 text-base uppercase tracking-wide px-10 py-4 rounded hover:bg-black/80 transition-all flex items-center gap-2 mx-auto">
               Book AI Audit   $750 <ArrowRight size={18} />
             </button>

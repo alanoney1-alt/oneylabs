@@ -25,7 +25,7 @@ export default function AISearchAuditOrlando() {
           <p className="font-body text-lg text-white/70 leading-relaxed mb-8">
             A 2-hour deep dive into your AI search visibility. I'll show you exactly where you rank in ChatGPT, Perplexity, and Claude, and what it takes to show up.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="btn-lime">Book Your Audit</button>
           </Link>
         </div>
@@ -168,7 +168,7 @@ export default function AISearchAuditOrlando() {
               If you book a service after the audit, the $250 is applied to your first month.
             </p>
           </div>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="btn-lime">Book Your Audit</button>
           </Link>
         </div>
@@ -257,7 +257,7 @@ export default function AISearchAuditOrlando() {
           <p className="font-body text-lg mb-8 text-black/80">
             Book your 2-hour audit. I'll show you exactly where you rank in ChatGPT and what it takes to show up.
           </p>
-          <Link href="/contact">
+          <Link href="/book">
             <button className="bg-black text-lime font-heading font-700 px-8 py-3 rounded hover:bg-black/90 transition">
               Book Audit Now
             </button>
