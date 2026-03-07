@@ -27,3 +27,15 @@
 
 ## UX Improvements
 - [x] Change all 'Book Free AI Audit' buttons to link to /book instead of /contact
+
+## AI Agent (The Closer)
+- [x] Agent brain with GPT function calling (tool loop)
+- [x] Tool: Live AI visibility audit mid-conversation
+- [x] Tool: Website scanner (schema, llms.txt, structured data, mobile)
+- [x] Tool: Auto-book consultation within chat
+- [x] Tool: Lead qualification and scoring system
+- [x] Tool: Orlando market data lookup
+- [x] Deep knowledge base (full brief, pricing, competitors, objection handling)
+- [x] Upgraded ChatWidget with rich tool result displays
+- [x] Real-time hot lead notifications to owner
+- [x] Vitest tests for agent tools

@@ -10,6 +10,7 @@ import { blogRouter } from "./routers/blog";
 import { reviewsRouter } from "./routers/reviews";
 import { chatbotRouter } from "./routers/chatbot";
 import { dashboardRouter } from "./routers/dashboard";
+import { agentRouter } from "./routers/agent";
 
 export const appRouter = router({
   system: systemRouter,
@@ -29,6 +30,7 @@ export const appRouter = router({
   reviews: reviewsRouter,
   chatbot: chatbotRouter,
   dashboard: dashboardRouter,
+  agent: agentRouter,
 });
 
 export type AppRouter = typeof appRouter;
