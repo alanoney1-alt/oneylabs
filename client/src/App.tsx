@@ -20,8 +20,9 @@ import Blog from "./pages/Blog";
 import BlogPost1 from "./pages/BlogPost1";
 import BlogPost2 from "./pages/BlogPost2";
 import BlogPost3 from "./pages/BlogPost3";
-
+import VisibilityChecker from "./pages/VisibilityChecker";
 function Router() {
+  // make sure to consider if you need authentication for certain routes
   return (
     <Switch>
       <Route path="/" component={Home} />
@@ -40,6 +41,7 @@ function Router() {
       <Route path="/blog/best-hvac-company-orlando-chatgpt" component={BlogPost1} />
       <Route path="/blog/how-to-show-up-in-perplexity" component={BlogPost2} />
       <Route path="/blog/chatgpt-vs-google-local-business" component={BlogPost3} />
+      <Route path="/visibility-checker" component={VisibilityChecker} />
       <Route path="/404" component={NotFound} />
       <Route component={NotFound} />
     </Switch>

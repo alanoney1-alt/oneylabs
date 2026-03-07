@@ -16,6 +16,7 @@ const navLinks = [
   { href: "/workshops", label: "Workshops" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
+  { href: "/visibility-checker", label: "Checker" },
 ];
 
 export default function Navbar() {
