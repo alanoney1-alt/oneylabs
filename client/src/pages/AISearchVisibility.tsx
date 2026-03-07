@@ -4,6 +4,7 @@
  * Deep dive on Pillar 1   AI Search Visibility
  */
 import { Link } from "wouter";
+import { useEffect } from "react";
 import { ArrowRight, CheckCircle2, Search, TrendingUp, Globe, Star } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -85,7 +86,31 @@ const faqs = [
   },
 ];
 
+// FAQ Schema for answer engines
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": faqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+
 export default function AISearchVisibility() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(faqSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#111111]">
       <Navbar />

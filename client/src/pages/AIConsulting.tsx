@@ -4,6 +4,7 @@
  * AI Operations Consulting   audit, implement, manage
  */
 import { Link } from "wouter";
+import { useEffect } from "react";
 import { ArrowRight, Zap, Clock, DollarSign, Users } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -14,7 +15,52 @@ const targets = [
   "Any business with 5 50 employees still doing things by hand",
 ];
 
+const consultingFaqs = [
+  {
+    q: "What is AI Business Growth?",
+    a: "AI Business Growth is automation consulting. I audit your business, find where you waste time, and either automate it with AI or build custom software to replace it."
+  },
+  {
+    q: "What's the difference between a build and automation?",
+    a: "Automation uses existing AI tools (ChatGPT, Zapier, Make, etc.) to streamline your current processes. Builds create custom software when you need something unique. Both save you time and money."
+  },
+  {
+    q: "How long does a build take?",
+    a: "2 4 weeks for an MVP. That's 50% faster than traditional dev because AI handles the heavy lifting. Ongoing support available after launch."
+  },
+  {
+    q: "What if I have an idea but no budget?",
+    a: "Revenue share option available. If I believe in your idea, I'll build it for 15% of revenue instead of upfront payment. Zero risk for you."
+  },
+  {
+    q: "Do you work with non-tech founders?",
+    a: "Yes. Most of my clients aren't technical. I handle everything from strategy to launch. You just show up and use it."
+  }
+];
+
+const consultingSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": consultingFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
+
 export default function AIConsulting() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(consultingSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   return (
     <div className="min-h-screen bg-[#111111]">
       <Navbar />

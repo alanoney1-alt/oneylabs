@@ -4,11 +4,48 @@
  * For entrepreneurs with ideas   idea-to-product builds
  */
 import { Link } from "wouter";
+import { useEffect } from "react";
 import { ArrowRight, Rocket, CheckCircle2, ExternalLink } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 const DASHBOARD_IMG = "https://d2xsxph8kpxj0f.cloudfront.net/310519663409472708/AwZd3Nde3Mv8PBZXHdvufN/ai-tools-dashboard-gCb8Zuz9S6rQartTaWAMH6.webp";
+
+const buildFaqs = [
+  {
+    q: "What can you build?",
+    a: "Web apps, SaaS platforms, custom AI agents, workflow automation, internal tools, booking systems, analytics dashboards, e-commerce platforms. If you can describe it, I can build it."
+  },
+  {
+    q: "How fast can you build it?",
+    a: "2 4 weeks for an MVP. That's 50% faster than traditional development because AI handles the heavy lifting. You get working software, not a prototype."
+  },
+  {
+    q: "How much does it cost?",
+    a: "Discovery session is $250 (applied to your project). MVP builds range $3,500 to $10,000 depending on complexity. Ongoing support is $500 $1,500/month or 15% revenue share if I believe in your idea."
+  },
+  {
+    q: "Do I need to be technical?",
+    a: "No. Most of my clients aren't technical. I handle everything from strategy to launch. You just show up and use it."
+  },
+  {
+    q: "What if I don't have budget upfront?",
+    a: "Revenue share option available. If I believe in your idea, I'll build it for 15% of revenue instead of upfront payment. Zero risk for you."
+  }
+];
+
+const buildSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": buildFaqs.map(faq => ({
+    "@type": "Question",
+    "name": faq.q,
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": faq.a
+    }
+  }))
+};
 
 const whatWeBuild = [
   "Web apps and SaaS platforms",
@@ -40,6 +77,16 @@ const process = [
 ];
 
 export default function BuildWithMe() {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.textContent = JSON.stringify(buildSchema);
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#111111]">
       <Navbar />
