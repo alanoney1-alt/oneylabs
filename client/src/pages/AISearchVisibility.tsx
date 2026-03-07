@@ -280,6 +280,53 @@ export default function AISearchVisibility() {
         </div>
       </section>
 
+      {/* INTERNAL LINKING: Related Content Hub */}
+      <section className="py-20 bg-[#111111]">
+        <div className="container">
+          <div className="mb-12 text-center">
+            <p className="section-number mb-3">Learn More</p>
+            <h2 className="font-display text-[clamp(1.8rem,3vw,2.5rem)] text-white leading-none">
+              EXPLORE THE AI VISIBILITY<br />
+              <span className="text-lime">CONTENT HUB</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Link to How to Show Up in ChatGPT */}
+            <Link href="/how-to-show-up-in-chatgpt">
+              <div className="card-service group cursor-pointer">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-3">CONTENT GUIDE</span>
+                <h3 className="font-heading font-700 text-white text-lg mb-2 group-hover:text-lime transition-colors">
+                  How to Show Up in ChatGPT Results
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-4">
+                  Step-by-step guide with 5 actionable steps to get your business visible in ChatGPT.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600">
+                  Read Guide <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+
+            {/* Link to AI Search Audit */}
+            <Link href="/ai-search-audit-orlando">
+              <div className="card-service group cursor-pointer">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-3">SERVICE</span>
+                <h3 className="font-heading font-700 text-white text-lg mb-2 group-hover:text-lime transition-colors">
+                  Get Your AI Search Audit
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-4">
+                  2-hour deep dive showing exactly where you rank in ChatGPT, Perplexity, and Claude.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600">
+                  Book Audit <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );

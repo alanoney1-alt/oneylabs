@@ -518,9 +518,69 @@ export default function Home() {
               </button>
             </a>
           </div>
-          <p className="font-body text-black/50 text-sm mt-6 animate-slide-up">
-            Based in Lake Nona, FL · Serving all of South Orlando
-          </p>
+        </div>
+      </section>
+
+      {/* ── ANSWER ENGINE CONTENT HUB ── */}
+      <section className="bg-[#0D0D0D] py-24">
+        <div className="container">
+          <div className="mb-16 text-center">
+            <p className="section-number mb-3">Learn More</p>
+            <h2 className="font-display text-[clamp(2rem,4vw,3rem)] text-white leading-none">
+              UNDERSTAND AI SEARCH<br />
+              <span className="text-lime">VISIBILITY</span>
+            </h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {/* Card 1: What is AI Search Visibility */}
+            <Link href="/what-is-ai-search-visibility">
+              <div className="card-service group cursor-pointer h-full flex flex-col">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-4">EXPLAINER</span>
+                <h3 className="font-heading font-800 text-white text-lg mb-3 group-hover:text-lime transition-colors">
+                  What is AI Search Visibility?
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-6 flex-grow">
+                  Understand the basics of AI search visibility and why it matters for your business. Learn how ChatGPT, Perplexity, and Claude are changing how customers find you.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600 group-hover:gap-3 transition-all">
+                  Read <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+
+            {/* Card 2: How to Show Up in ChatGPT */}
+            <Link href="/how-to-show-up-in-chatgpt">
+              <div className="card-service group cursor-pointer h-full flex flex-col">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-4">CONTENT GUIDE</span>
+                <h3 className="font-heading font-800 text-white text-lg mb-3 group-hover:text-lime transition-colors">
+                  How to Show Up in ChatGPT Results
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-6 flex-grow">
+                  Step-by-step guide to getting your business visible in ChatGPT. Optimize your GBP, get listed on directories, add schema markup, and create answer-engine content.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600 group-hover:gap-3 transition-all">
+                  Read <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+
+            {/* Card 3: AI Search Audit */}
+            <Link href="/ai-search-audit-orlando">
+              <div className="card-service group cursor-pointer h-full flex flex-col">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-4">SERVICE PAGE</span>
+                <h3 className="font-heading font-800 text-white text-lg mb-3 group-hover:text-lime transition-colors">
+                  AI Search Audit for Orlando Businesses
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-6 flex-grow">
+                  Get a 2-hour deep dive into your AI search visibility. See exactly where you rank in ChatGPT, Perplexity, and Claude, plus actionable recommendations.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600 group-hover:gap-3 transition-all">
+                  Learn More <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+          </div>
         </div>
       </section>
 

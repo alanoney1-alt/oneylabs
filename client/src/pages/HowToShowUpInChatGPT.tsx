@@ -325,6 +325,46 @@ export default function HowToShowUpInChatGPT() {
         </div>
       </section>
 
+      {/* INTERNAL LINKING: Related Content Hub */}
+      <section className="py-16 px-4 bg-[#1A1A1A]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl mb-12 text-center">Explore the AI Visibility <span className="text-lime">Content Hub</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Link to What is AI Search Visibility */}
+            <Link href="/what-is-ai-search-visibility">
+              <div className="card-service group cursor-pointer">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-3">EXPLAINER</span>
+                <h3 className="font-heading font-700 text-white text-lg mb-2 group-hover:text-lime transition-colors">
+                  What is AI Search Visibility?
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-4">
+                  Understand the fundamentals and why it matters for your business.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600">
+                  Read <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+
+            {/* Link to AI Search Audit */}
+            <Link href="/ai-search-audit-orlando">
+              <div className="card-service group cursor-pointer">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-3">SERVICE</span>
+                <h3 className="font-heading font-700 text-white text-lg mb-2 group-hover:text-lime transition-colors">
+                  Get Your AI Search Audit
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-4">
+                  2-hour deep dive showing where you rank in ChatGPT, Perplexity, and Claude.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600">
+                  Book Audit <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 px-4 bg-lime text-black">
         <div className="max-w-3xl mx-auto text-center">

@@ -210,6 +210,46 @@ export default function AISearchAuditOrlando() {
         </div>
       </section>
 
+      {/* INTERNAL LINKING: Related Content Hub */}
+      <section className="py-16 px-4 bg-[#1A1A1A]">
+        <div className="max-w-3xl mx-auto">
+          <h2 className="font-display text-3xl mb-12 text-center">Learn More About AI <span className="text-lime">Search Visibility</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {/* Link to What is AI Search Visibility */}
+            <Link href="/what-is-ai-search-visibility">
+              <div className="card-service group cursor-pointer">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-3">EXPLAINER</span>
+                <h3 className="font-heading font-700 text-white text-lg mb-2 group-hover:text-lime transition-colors">
+                  What is AI Search Visibility?
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-4">
+                  Understand the fundamentals and why it matters for your business.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600">
+                  Read <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+
+            {/* Link to How to Show Up in ChatGPT */}
+            <Link href="/how-to-show-up-in-chatgpt">
+              <div className="card-service group cursor-pointer">
+                <span className="font-mono-data text-lime text-xs opacity-60 mb-3">CONTENT GUIDE</span>
+                <h3 className="font-heading font-700 text-white text-lg mb-2 group-hover:text-lime transition-colors">
+                  How to Show Up in ChatGPT Results
+                </h3>
+                <p className="font-body text-white/60 text-sm leading-relaxed mb-4">
+                  Step-by-step guide with 5 actionable steps to get visible in ChatGPT.
+                </p>
+                <div className="flex items-center gap-2 text-lime text-sm font-heading font-600">
+                  Read Guide <ArrowRight size={14} />
+                </div>
+              </div>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-16 px-4 bg-lime text-black">
         <div className="max-w-3xl mx-auto text-center">
