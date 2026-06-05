@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Readiness Discovery — Oney Labs</title>
+  <style>
+    :root {
+      --yellow: #C8FF00;
+      --yellow-dim: #a0cc00;
+      --black: #0a0a0a;
+      --dark: #111111;
+      --surface: #1a1a1a;
+      --surface2: #242424;
+      --border: #2e2e2e;
+      --text: #f0f0f0;
+      --muted: #888;
+      --radius: 12px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--black);
+      color: var(--text);
+      min-height: 100vh;
+      line-height: 1.6;
+    }
+
+    /* ── HEADER ── */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .logo-ring {
+      width: 36px; height: 36px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 14px var(--yellow);
+    }
+    .logo-ring svg { width: 22px; height: 22px; }
+    .logo-text { font-size: 18px; font-weight: 700; letter-spacing: 0.05em; color: var(--text); }
+    .logo-text span { color: var(--yellow); }
+    .tagline { font-size: 13px; color: var(--muted); }
+
+    /* ── PROGRESS BAR ── */
+    .progress-bar {
+      width: 100%;
+      height: 3px;
+      background: var(--border);
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--yellow), var(--yellow-dim));
+      transition: width 0.5s ease;
+    }
+
+    /* ── MAIN CONTAINER ── */
+    main {
+      max-width: 740px;
+      margin: 0 auto;
+      padding: 40px 24px 80px;
+    }
+
+    /* ── STEP INDICATOR ── */
+    .step-indicator {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .step-badge {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 4px 12px;
+      font-size: 12px;
+      color: var(--muted);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .step-badge.active {
+      background: rgba(200,255,0,0.1);
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    /* ── CARDS ── */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 32px;
+      margin-bottom: 20px;
+    }
+    .card-header {
+      margin-bottom: 24px;
+    }
+    .card-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--yellow);
+      margin-bottom: 8px;
+    }
+    .card-title {
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--text);
+    }
+    .card-desc {
+      margin-top: 10px;
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    /* ── FORM ELEMENTS ── */
+    .field {
+      margin-bottom: 28px;
+    }
+    label {
+      display: block;
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    label .q-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px; height: 22px;
+      background: rgba(200,255,0,0.12);
+      border: 1px solid rgba(200,255,0,0.3);
+      border-radius: 50%;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--yellow);
+      margin-right: 8px;
+    }
+    textarea, input[type="text"], select {
+      width: 100%;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-size: 14px;
+      font-family: inherit;
+      padding: 12px 14px;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    textarea:focus, input[type="text"]:focus, select:focus {
+      outline: none;
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 3px rgba(200,255,0,0.08);
+    }
+    textarea { min-height: 90px; }
+    select option { background: var(--surface2); }
+
+    .sentence-fill {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px 14px;
+      flex-wrap: wrap;
+      transition: border-color 0.2s;
+    }
+    .sentence-fill:focus-within {
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 3px rgba(200,255,0,0.08);
+    }
+    .sentence-fill .prefix {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+      padding-top: 1px;
+    }
+    .sentence-fill input {
+      flex: 1;
+      min-width: 200px;
+      background: transparent;
+      border: none;
+      padding: 0;
+      font-size: 14px;
+    }
+    .sentence-fill input:focus {
+      outline: none;
+      box-shadow: none;
+      border: none;
+    }
+
+    /* chip/tag multi-select */
+    .chip-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+    .chip {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.15s;
+      user-select: none;
+    }
+    .chip:hover { border-color: var(--yellow); color: var(--yellow); }
+    .chip.selected {
+      background: rgba(200,255,0,0.12);
+      border-color: var(--yellow);
+      color: var(--yellow);
+    }
+
+    /* ── BUTTONS ── */
+    .btn-row {
+      display: flex;
+      gap: 12px;
+      justify-content: flex-end;
+      margin-top: 32px;
+    }
+    .btn {
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      letter-spacing: 0.02em;
+    }
+    .btn-primary {
+      background: var(--yellow);
+      color: var(--black);
+    }
+    .btn-primary:hover { background: #d8ff22; box-shadow: 0 0 16px rgba(200,255,0,0.4); }
+    .btn-secondary {
+      background: transparent;
+      color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .btn-secondary:hover { border-color: var(--muted); color: var(--text); }
+
+    /* ── HERO / WELCOME ── */
+    .hero {
+      text-align: center;
+      padding: 60px 0 40px;
+    }
+    .hero-icon {
+      width: 72px; height: 72px;
+      background: rgba(200,255,0,0.08);
+      border: 1px solid rgba(200,255,0,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 24px;
+      box-shadow: 0 0 32px rgba(200,255,0,0.1);
+    }
+    .hero-icon svg { width: 34px; height: 34px; }
+    .hero h1 { font-size: 32px; font-weight: 800; margin-bottom: 16px; }
+    .hero h1 span { color: var(--yellow); }
+    .hero p { font-size: 16px; color: var(--muted); max-width: 520px; margin: 0 auto 32px; }
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .hero-meta-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .hero-meta-item .dot {
+      width: 6px; height: 6px;
+      background: var(--yellow);
+      border-radius: 50%;
+    }
+
+    /* ── SECTION DIVIDER ── */
+    .section-divider {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 8px 0 24px;
+    }
+    .section-divider span {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .section-divider::before, .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    /* ── SUMMARY OUTPUT ── */
+    .summary-box {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 24px;
+      font-size: 13px;
+      line-height: 1.8;
+      white-space: pre-wrap;
+      color: var(--text);
+      max-height: 520px;
+      overflow-y: auto;
+    }
+    .summary-box::-webkit-scrollbar { width: 6px; }
+    .summary-box::-webkit-scrollbar-track { background: transparent; }
+    .summary-box::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+    .copy-btn {
+      margin-top: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 8px 18px;
+      font-size: 13px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .copy-btn:hover { border-color: var(--yellow); color: var(--yellow); }
+    .copy-btn.copied { background: rgba(200,255,0,0.1); border-color: var(--yellow); color: var(--yellow); }
+
+    /* ── COMPLETION ── */
+    .completion {
+      text-align: center;
+      padding: 32px 0 16px;
+    }
+    .completion-icon {
+      width: 64px; height: 64px;
+      background: rgba(200,255,0,0.08);
+      border: 1px solid rgba(200,255,0,0.3);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 20px;
+    }
+    .completion h2 { font-size: 26px; font-weight: 800; margin-bottom: 12px; }
+    .completion h2 span { color: var(--yellow); }
+    .completion p { font-size: 14px; color: var(--muted); max-width: 480px; margin: 0 auto 28px; }
+
+    /* ── CONTACT STRIP ── */
+    .contact-strip {
+      background: rgba(200,255,0,0.05);
+      border: 1px solid rgba(200,255,0,0.15);
+      border-radius: var(--radius);
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .contact-strip .label { font-size: 15px; font-weight: 600; }
+    .contact-strip .sub { font-size: 13px; color: var(--muted); margin-top: 4px; }
+    .btn-outline {
+      background: transparent;
+      color: var(--yellow);
+      border: 1px solid var(--yellow);
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-outline:hover { background: rgba(200,255,0,0.1); box-shadow: 0 0 12px rgba(200,255,0,0.2); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      header { padding: 16px 20px; }
+      main { padding: 28px 16px 60px; }
+      .card { padding: 24px 18px; }
+      .hero h1 { font-size: 26px; }
+      .btn-row { flex-direction: column-reverse; }
+      .btn { width: 100%; text-align: center; }
+    }
+
+    /* ── HIDDEN ── */
+    .step { display: none; }
+    .step.active { display: block; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <div class="logo-ring">
+      <svg viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="11" cy="11" r="8" stroke="#0a0a0a" stroke-width="2.5"/>
+        <circle cx="11" cy="11" r="3" fill="#0a0a0a"/>
+        <line x1="5" y1="5" x2="2" y2="2" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/>
+        <line x1="17" y1="5" x2="20" y2="2" stroke="#0a0a0a" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="logo-text">ONEY <span>LABS</span></span>
+  </div>
+  <span class="tagline">AI Readiness Discovery</span>
+</header>
+
+<div class="progress-bar"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+
+<main>
+
+  <!-- ═══════════════════════════════════════════════ STEP 0 – WELCOME -->
+  <div class="step active" id="step-0">
+    <div class="hero">
+      <div class="hero-icon">
+        <svg viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M17 4L20.5 13.5H31L22.75 19.5L25.5 30L17 24L8.5 30L11.25 19.5L3 13.5H13.5L17 4Z" stroke="#C8FF00" stroke-width="1.5" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h1>Discover Your <span>AI Potential</span></h1>
+      <p>A guided self-assessment to uncover where AI can make the biggest difference in your business — and how Oney Labs can partner with you.</p>
+      <div class="hero-meta">
+        <div class="hero-meta-item"><div class="dot"></div>~10 minutes</div>
+        <div class="hero-meta-item"><div class="dot"></div>No signup required</div>
+        <div class="hero-meta-item"><div class="dot"></div>Get a sharable briefing sheet</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-eyebrow">How it works</div>
+      <div class="card-title" style="font-size:18px; margin-bottom:16px;">Two quick parts</div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="min-width:32px;height:32px;background:rgba(200,255,0,0.12);border:1px solid rgba(200,255,0,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--yellow)">I</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:2px;">Self-Reflection</div>
+            <div style="font-size:13px;color:var(--muted);">4 foundational questions about your mission, context, values, and AI goals.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="min-width:32px;height:32px;background:rgba(200,255,0,0.12);border:1px solid rgba(200,255,0,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--yellow)">II</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:2px;">Deeper Discovery</div>
+            <div style="font-size:13px;color:var(--muted);">Guided questions that surface challenges, opportunities, and your AI readiness score.</div>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;">
+          <div style="min-width:32px;height:32px;background:rgba(200,255,0,0.12);border:1px solid rgba(200,255,0,0.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--yellow)">✓</div>
+          <div>
+            <div style="font-weight:600;margin-bottom:2px;">Your AI Briefing Sheet</div>
+            <div style="font-size:13px;color:var(--muted);">A structured document you can paste into any AI conversation — or share with us.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-primary" onclick="goTo(1)">Start the Assessment →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ STEP 1 – PART I A -->
+  <div class="step" id="step-1">
+    <div class="step-indicator">
+      <span class="step-badge active">Part I</span>
+      <span class="step-badge">Part II</span>
+      <span class="step-badge">Briefing Sheet</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Part I · Self-Reflection</div>
+        <div class="card-title">Your Mission & Context</div>
+        <div class="card-desc">Take your time — these answers form the foundation of everything else.</div>
+      </div>
+
+      <div class="field">
+        <label><span class="q-num">1</span>What is the mission and vision of your business? What do you want to be known for?</label>
+        <textarea id="q1" placeholder="e.g. We want to be the go-to home services company in our city, known for showing up on time and treating every customer like family..."></textarea>
+      </div>
+
+      <div class="field">
+        <label><span class="q-num">2</span>Describe your business situation and your specific role — constraints, strengths, opportunities, team size, etc.</label>
+        <textarea id="q2" placeholder="e.g. I run a 3-person landscaping company. I handle everything from sales calls to scheduling to invoicing. We're growing but I'm stretched thin..."></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goTo(0)">← Back</button>
+      <button class="btn btn-primary" onclick="goTo(2)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ STEP 2 – PART I B -->
+  <div class="step" id="step-2">
+    <div class="step-indicator">
+      <span class="step-badge active">Part I</span>
+      <span class="step-badge">Part II</span>
+      <span class="step-badge">Briefing Sheet</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Part I · Self-Reflection (continued)</div>
+        <div class="card-title">Values & AI Vision</div>
+      </div>
+
+      <div class="field">
+        <label><span class="q-num">3</span>What are the core values and standards that shape how you operate? What would you never compromise on?</label>
+        <textarea id="q3" placeholder="e.g. Honesty with customers, quality over speed, never overpromising. We'd never cut corners on safety, even if it costs us a job..."></textarea>
+      </div>
+
+      <div class="field">
+        <label><span class="q-num">4</span>Complete this sentence:</label>
+        <div class="sentence-fill">
+          <span class="prefix">"If AI could help me</span>
+          <input type="text" id="q4a" placeholder="handle follow-up emails, schedule appointments, answer FAQs" />
+        </div>
+        <div style="height:10px;"></div>
+        <div class="sentence-fill">
+          <span class="prefix">I would be able to spend more time</span>
+          <input type="text" id="q4b" placeholder="on the job site, building relationships, growing the business" />
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goTo(1)">← Back</button>
+      <button class="btn btn-primary" onclick="goTo(3)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ STEP 3 – PART II A -->
+  <div class="step" id="step-3">
+    <div class="step-indicator">
+      <span class="step-badge">Part I</span>
+      <span class="step-badge active">Part II</span>
+      <span class="step-badge">Briefing Sheet</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Part II · Deeper Discovery</div>
+        <div class="card-title">Your Business & Customers</div>
+        <div class="card-desc">Help us understand who you serve and what you offer.</div>
+      </div>
+
+      <div class="field">
+        <label>What industry or sector are you in?</label>
+        <input type="text" id="industry" placeholder="e.g. Home services, retail, food & bev, healthcare, professional services..." />
+      </div>
+
+      <div class="field">
+        <label>What products or services do you offer?</label>
+        <textarea id="services" placeholder="List your main offerings and roughly how they're priced or structured..." style="min-height:80px;"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Who are your customers? Describe them specifically.</label>
+        <textarea id="customers" placeholder="e.g. Homeowners aged 35–55 in our county, mostly referrals, high expectations around reliability..." style="min-height:80px;"></textarea>
+      </div>
+
+      <div class="field">
+        <label>How big is your team?</label>
+        <div class="chip-group" id="teamSize">
+          <div class="chip" data-val="Just me (solo)">Just me (solo)</div>
+          <div class="chip" data-val="2–5 people">2–5 people</div>
+          <div class="chip" data-val="6–15 people">6–15 people</div>
+          <div class="chip" data-val="16–50 people">16–50 people</div>
+          <div class="chip" data-val="50+ people">50+ people</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goTo(2)">← Back</button>
+      <button class="btn btn-primary" onclick="goTo(4)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ STEP 4 – PART II B -->
+  <div class="step" id="step-4">
+    <div class="step-indicator">
+      <span class="step-badge">Part I</span>
+      <span class="step-badge active">Part II</span>
+      <span class="step-badge">Briefing Sheet</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Part II · Deeper Discovery</div>
+        <div class="card-title">Challenges & Daily Friction</div>
+      </div>
+
+      <div class="field">
+        <label>What are the biggest challenges your business faces right now?</label>
+        <div class="chip-group" id="challenges">
+          <div class="chip" data-val="Not enough time">Not enough time</div>
+          <div class="chip" data-val="Cash flow / revenue">Cash flow / revenue</div>
+          <div class="chip" data-val="Finding / keeping staff">Finding / keeping staff</div>
+          <div class="chip" data-val="Getting new customers">Getting new customers</div>
+          <div class="chip" data-val="Managing existing customers">Managing existing customers</div>
+          <div class="chip" data-val="Staying organized">Staying organized</div>
+          <div class="chip" data-val="Competition">Competition</div>
+          <div class="chip" data-val="Rising costs">Rising costs</div>
+          <div class="chip" data-val="No-shows / cancellations">No-shows / cancellations</div>
+          <div class="chip" data-val="Too much admin work">Too much admin work</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Describe the tasks or processes that eat up the most time in a typical week.</label>
+        <textarea id="timeWasters" placeholder="e.g. Responding to quote requests, chasing invoices, posting on social media, scheduling..."></textarea>
+      </div>
+
+      <div class="field">
+        <label>What's a recurring frustration or bottleneck you wish you could just solve?</label>
+        <textarea id="frustration" placeholder="e.g. I spend 2 hours a day on texts and emails that could be automated..." style="min-height:70px;"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goTo(3)">← Back</button>
+      <button class="btn btn-primary" onclick="goTo(5)">Continue →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ STEP 5 – PART II C -->
+  <div class="step" id="step-5">
+    <div class="step-indicator">
+      <span class="step-badge">Part I</span>
+      <span class="step-badge active">Part II</span>
+      <span class="step-badge">Briefing Sheet</span>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <div class="card-eyebrow">Part II · Deeper Discovery</div>
+        <div class="card-title">Opportunities & AI Goals</div>
+      </div>
+
+      <div class="field">
+        <label>Where do you see the biggest opportunity for growth or improvement in the next 12 months?</label>
+        <textarea id="opportunity" placeholder="e.g. We get great reviews but aren't getting referrals consistently. If we systematized follow-up, I think revenue could jump 30%..." style="min-height:80px;"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Which areas of your business feel like they could benefit most from AI or automation?</label>
+        <div class="chip-group" id="aiAreas">
+          <div class="chip" data-val="Customer communication">Customer communication</div>
+          <div class="chip" data-val="Scheduling & booking">Scheduling & booking</div>
+          <div class="chip" data-val="Marketing & social media">Marketing & social media</div>
+          <div class="chip" data-val="Invoicing & payments">Invoicing & payments</div>
+          <div class="chip" data-val="Lead generation">Lead generation</div>
+          <div class="chip" data-val="Reporting & analysis">Reporting & analysis</div>
+          <div class="chip" data-val="Proposals & estimates">Proposals & estimates</div>
+          <div class="chip" data-val="Employee onboarding">Employee onboarding</div>
+          <div class="chip" data-val="Inventory tracking">Inventory tracking</div>
+          <div class="chip" data-val="Customer reviews & reputation">Customer reviews & reputation</div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label>Have you used AI tools before? What was your experience?</label>
+        <textarea id="aiExperience" placeholder="e.g. I've tried ChatGPT a few times but wasn't sure what to ask. I'd love to understand how it could actually fit into my day-to-day..." style="min-height:70px;"></textarea>
+      </div>
+
+      <div class="field">
+        <label>Is there anything unique about your business, market, or community we should understand?</label>
+        <textarea id="unique" placeholder="e.g. We're in a seasonal market, most of our customers come from one neighborhood, we serve a specific cultural community..." style="min-height:70px;"></textarea>
+      </div>
+    </div>
+
+    <div class="btn-row">
+      <button class="btn btn-secondary" onclick="goTo(4)">← Back</button>
+      <button class="btn btn-primary" onclick="generateSummary()">Generate My Briefing Sheet →</button>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════ STEP 6 – BRIEFING SHEET -->
+  <div class="step" id="step-6">
+    <div class="step-indicator">
+      <span class="step-badge">Part I</span>
+      <span class="step-badge">Part II</span>
+      <span class="step-badge active">Briefing Sheet</span>
+    </div>
+
+    <div class="completion">
+      <div class="completion-icon">
+        <svg viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M5 14L11 20L23 8" stroke="#C8FF00" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <h2>Your <span>AI Briefing Sheet</span> is ready</h2>
+      <p>Copy this document and paste it at the start of any AI conversation — or send it to Oney Labs to kick off your partnership.</p>
+    </div>
+
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;flex-wrap:wrap;gap:10px;">
+        <div class="card-eyebrow" style="margin:0;">Business AI Context Document</div>
+        <div style="display:flex;gap:8px;">
+          <button class="copy-btn" id="copyBtn" onclick="copySheet()">Copy to Clipboard</button>
+          <button class="copy-btn" onclick="downloadSheet()">Download .txt</button>
+        </div>
+      </div>
+      <div class="summary-box" id="summaryOutput"></div>
+    </div>
+
+    <div class="contact-strip">
+      <div>
+        <div class="label">Ready to explore your next steps?</div>
+        <div class="sub">Send your briefing sheet directly to Alan at Oney Labs — he'll reach out to map your AI roadmap.</div>
+      </div>
+      <button class="btn-outline" id="sendBtn" onclick="sendToAlan()">Send to Alan →</button>
+    </div>
+    <div id="sendConfirm" style="display:none;margin-top:12px;background:rgba(200,255,0,0.06);border:1px solid rgba(200,255,0,0.2);border-radius:10px;padding:16px 20px;font-size:13px;color:var(--muted);line-height:1.6;">
+      <span style="color:var(--yellow);font-weight:600;">✓ Your email app is opening.</span> If nothing happened, email Alan directly at <a href="mailto:asquaredjunk@gmail.com" style="color:var(--yellow);">asquaredjunk@gmail.com</a> and paste your briefing sheet.
+    </div>
+
+    <div class="btn-row" style="margin-top:16px;">
+      <button class="btn btn-secondary" onclick="goTo(5)">← Edit Answers</button>
+      <button class="btn btn-secondary" onclick="startOver()">Start Over</button>
+    </div>
+  </div>
+
+</main>
+
+<script>
+  let currentStep = 0;
+  const totalSteps = 6;
+
+  const stepProgress = [0, 15, 28, 45, 60, 78, 100];
+
+  function goTo(n) {
+    document.getElementById('step-' + currentStep).classList.remove('active');
+    currentStep = n;
+    document.getElementById('step-' + currentStep).classList.add('active');
+    document.getElementById('progressFill').style.width = stepProgress[n] + '%';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Single-select chip groups
+  document.querySelectorAll('#teamSize .chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('#teamSize .chip').forEach(c => c.classList.remove('selected'));
+      chip.classList.add('selected');
+    });
+  });
+
+  // Multi-select chip groups
+  ['challenges', 'aiAreas'].forEach(groupId => {
+    document.querySelectorAll('#' + groupId + ' .chip').forEach(chip => {
+      chip.addEventListener('click', () => chip.classList.toggle('selected'));
+    });
+  });
+
+  function getChips(groupId, multi = true) {
+    const selected = [...document.querySelectorAll('#' + groupId + ' .chip.selected')];
+    const vals = selected.map(c => c.dataset.val);
+    return vals.length ? vals.join(', ') : '(not specified)';
+  }
+
+  function val(id) {
+    const el = document.getElementById(id);
+    return el ? el.value.trim() || '(not provided)' : '(not provided)';
+  }
+
+  function generateSummary() {
+    const q4a = document.getElementById('q4a').value.trim();
+    const q4b = document.getElementById('q4b').value.trim();
+    const aiSentence = q4a && q4b
+      ? `"If AI could help me ${q4a}, I would be able to spend more time ${q4b}."`
+      : '(not provided)';
+
+    const sheet = `━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+BUSINESS AI CONTEXT DOCUMENT
+Generated via Oney Labs AI Readiness Discovery
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART I — FOUNDATIONS
+
+📌 Mission & Vision
+${val('q1')}
+
+📌 Business Situation & Role
+${val('q2')}
+
+📌 Core Values & Non-Negotiables
+${val('q3')}
+
+📌 AI Vision Statement
+${aiSentence}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PART II — BUSINESS CONTEXT
+
+🏢 Industry / Sector
+${val('industry')}
+
+🛍️ Products & Services
+${val('services')}
+
+👥 Customer Profile
+${val('customers')}
+
+📊 Team Size
+${getChips('teamSize', false)}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+CHALLENGES & FRICTION
+
+⚠️ Current Business Challenges
+${getChips('challenges')}
+
+⏱️ Biggest Time Drains
+${val('timeWasters')}
+
+🔁 Recurring Frustration / Bottleneck
+${val('frustration')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+AI OPPORTUNITY PROFILE
+
+🚀 Growth Opportunity (12-Month View)
+${val('opportunity')}
+
+🤖 Areas Ready for AI / Automation
+${getChips('aiAreas')}
+
+💡 Prior AI Experience
+${val('aiExperience')}
+
+🌟 Unique Business Context
+${val('unique')}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HOW TO USE THIS DOCUMENT
+
+Paste this at the start of any AI conversation with the prompt:
+"Here is context about my business. Use this as shared background for our conversation."
+
+Or share it with Oney Labs at oneylabs.ai to begin your AI partnership consultation.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`;
+
+    document.getElementById('summaryOutput').textContent = sheet;
+    goTo(6);
+  }
+
+  function copySheet() {
+    const text = document.getElementById('summaryOutput').textContent;
+    navigator.clipboard.writeText(text).then(() => {
+      const btn = document.getElementById('copyBtn');
+      btn.textContent = '✓ Copied!';
+      btn.classList.add('copied');
+      setTimeout(() => {
+        btn.textContent = 'Copy to Clipboard';
+        btn.classList.remove('copied');
+      }, 2500);
+    });
+  }
+
+  function downloadSheet() {
+    const text = document.getElementById('summaryOutput').textContent;
+    const blob = new Blob([text], { type: 'text/plain' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'AI-Briefing-Sheet-OneyLabs.txt';
+    a.click();
+  }
+
+  function sendToAlan() {
+    const text = document.getElementById('summaryOutput').textContent;
+    const subject = encodeURIComponent('AI Readiness Briefing Sheet — Oney Labs Discovery');
+    const body = encodeURIComponent(text + '\n\n---\nSent via the Oney Labs AI Readiness Discovery tool at oneylabs.ai');
+    window.location.href = `mailto:asquaredjunk@gmail.com?subject=${subject}&body=${body}`;
+    document.getElementById('sendConfirm').style.display = 'block';
+    const btn = document.getElementById('sendBtn');
+    btn.textContent = '✓ Opening email...';
+    btn.style.opacity = '0.7';
+    btn.style.cursor = 'default';
+    setTimeout(() => {
+      btn.textContent = 'Send to Alan →';
+      btn.style.opacity = '1';
+      btn.style.cursor = 'pointer';
+    }, 4000);
+  }
+
+  function startOver() {
+    if (!confirm('Start over? Your answers will be cleared.')) return;
+    document.querySelectorAll('textarea, input[type="text"]').forEach(el => el.value = '');
+    document.querySelectorAll('.chip.selected').forEach(c => c.classList.remove('selected'));
+    goTo(0);
+  }
+</script>
+</body>
+</html>
